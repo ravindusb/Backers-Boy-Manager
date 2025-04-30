@@ -1,6 +1,0 @@
-framework module Pods_Cake_Shop_ManagerUITests {
-  umbrella header "Pods-Cake Shop ManagerUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
