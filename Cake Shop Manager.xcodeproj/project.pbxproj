@@ -8,12 +8,82 @@
 
 /* Begin PBXBuildFile section */
 		0453F0FA22FBDC7100C77897 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F0F922FBDC7100C77897 /* AppDelegate.swift */; };
-		0453F0FC22FBDC7100C77897 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F0FB22FBDC7100C77897 /* ViewController.swift */; };
 		0453F0FF22FBDC7100C77897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0453F0FD22FBDC7100C77897 /* Main.storyboard */; };
 		0453F10122FBDC7500C77897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0453F10022FBDC7500C77897 /* Assets.xcassets */; };
 		0453F10422FBDC7500C77897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0453F10222FBDC7500C77897 /* LaunchScreen.storyboard */; };
 		0453F10F22FBDC7500C77897 /* Cake_Shop_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F10E22FBDC7500C77897 /* Cake_Shop_ManagerTests.swift */; };
 		0453F11A22FBDC7500C77897 /* Cake_Shop_ManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F11922FBDC7500C77897 /* Cake_Shop_ManagerUITests.swift */; };
+		0453F17122FBDDAB00C77897 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12722FBDDAB00C77897 /* Helper.swift */; };
+		0453F17222FBDDAB00C77897 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12922FBDDAB00C77897 /* CGRectExtensions.swift */; };
+		0453F17322FBDDAB00C77897 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12A22FBDDAB00C77897 /* CGFloatExtensions.swift */; };
+		0453F17422FBDDAB00C77897 /* BlockPan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12B22FBDDAB00C77897 /* BlockPan.swift */; };
+		0453F17522FBDDAB00C77897 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12C22FBDDAB00C77897 /* UIViewController+Extensions.swift */; };
+		0453F17622FBDDAB00C77897 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12D22FBDDAB00C77897 /* ArrayExtensions.swift */; };
+		0453F17722FBDDAB00C77897 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12E22FBDDAB00C77897 /* UIView+Extensions.swift */; };
+		0453F17822FBDDAB00C77897 /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F12F22FBDDAB00C77897 /* CGPointExtensions.swift */; };
+		0453F17922FBDDAB00C77897 /* TimerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13022FBDDAB00C77897 /* TimerExtensions.swift */; };
+		0453F17A22FBDDAB00C77897 /* BlockSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13122FBDDAB00C77897 /* BlockSwipe.swift */; };
+		0453F17B22FBDDAB00C77897 /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13222FBDDAB00C77897 /* UITextViewExtensions.swift */; };
+		0453F17C22FBDDAB00C77897 /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13322FBDDAB00C77897 /* UISearchBar+Extensions.swift */; };
+		0453F17D22FBDDAB00C77897 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13422FBDDAB00C77897 /* DictionaryExtensions.swift */; };
+		0453F17E22FBDDAB00C77897 /* BlockPinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13522FBDDAB00C77897 /* BlockPinch.swift */; };
+		0453F17F22FBDDAB00C77897 /* UIBarButtonItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13622FBDDAB00C77897 /* UIBarButtonItemExtensions.swift */; };
+		0453F18022FBDDAB00C77897 /* ErrorTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13722FBDDAB00C77897 /* ErrorTypeExtensions.swift */; };
+		0453F18122FBDDAB00C77897 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13822FBDDAB00C77897 /* StringExtensions.swift */; };
+		0453F18222FBDDAB00C77897 /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13922FBDDAB00C77897 /* UIStoryboardExtensions.swift */; };
+		0453F18322FBDDAB00C77897 /* BlockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13A22FBDDAB00C77897 /* BlockButton.swift */; };
+		0453F18422FBDDAB00C77897 /* UIColoredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13B22FBDDAB00C77897 /* UIColoredView.swift */; };
+		0453F18522FBDDAB00C77897 /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13C22FBDDAB00C77897 /* BoolExtensions.swift */; };
+		0453F18622FBDDAB00C77897 /* EZSwiftFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13D22FBDDAB00C77897 /* EZSwiftFunctions.swift */; };
+		0453F18722FBDDAB00C77897 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13E22FBDDAB00C77897 /* DoubleExtensions.swift */; };
+		0453F18822FBDDAB00C77897 /* UISliderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F13F22FBDDAB00C77897 /* UISliderExtensions.swift */; };
+		0453F18922FBDDAB00C77897 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14022FBDDAB00C77897 /* URLExtensions.swift */; };
+		0453F18A22FBDDAB00C77897 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14122FBDDAB00C77897 /* FileManagerExtension.swift */; };
+		0453F18B22FBDDAB00C77897 /* Custom Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14222FBDDAB00C77897 /* Custom Extension.swift */; };
+		0453F18C22FBDDAB00C77897 /* CollectionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14322FBDDAB00C77897 /* CollectionsExtension.swift */; };
+		0453F18D22FBDDAB00C77897 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14422FBDDAB00C77897 /* UIImageExtensions.swift */; };
+		0453F18E22FBDDAB00C77897 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14522FBDDAB00C77897 /* BundleExtensions.swift */; };
+		0453F18F22FBDDAB00C77897 /* CharacterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14622FBDDAB00C77897 /* CharacterExtensions.swift */; };
+		0453F19022FBDDAB00C77897 /* BlockTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14722FBDDAB00C77897 /* BlockTap.swift */; };
+		0453F19122FBDDAB00C77897 /* FloatingPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14822FBDDAB00C77897 /* FloatingPointExtensions.swift */; };
+		0453F19222FBDDAB00C77897 /* NSDictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14922FBDDAB00C77897 /* NSDictionaryExtensions.swift */; };
+		0453F19322FBDDAB00C77897 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14A22FBDDAB00C77897 /* IntExtensions.swift */; };
+		0453F19422FBDDAB00C77897 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14B22FBDDAB00C77897 /* UIWindowExtensions.swift */; };
+		0453F19522FBDDAB00C77897 /* BlockLongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14C22FBDDAB00C77897 /* BlockLongPress.swift */; };
+		0453F19622FBDDAB00C77897 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14D22FBDDAB00C77897 /* DateExtensions.swift */; };
+		0453F19722FBDDAB00C77897 /* UISwitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14E22FBDDAB00C77897 /* UISwitchExtensions.swift */; };
+		0453F19822FBDDAB00C77897 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F14F22FBDDAB00C77897 /* Emoji.swift */; };
+		0453F19922FBDDAB00C77897 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15022FBDDAB00C77897 /* UIButtonExtensions.swift */; };
+		0453F19A22FBDDAB00C77897 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15122FBDDAB00C77897 /* NSObjectExtensions.swift */; };
+		0453F19B22FBDDAB00C77897 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15222FBDDAB00C77897 /* UserDefaultsExtension.swift */; };
+		0453F19C22FBDDAB00C77897 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15322FBDDAB00C77897 /* UIApplicationExtensions.swift */; };
+		0453F19D22FBDDAB00C77897 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15422FBDDAB00C77897 /* UIImageViewExtensions.swift */; };
+		0453F19E22FBDDAB00C77897 /* UIUserInterfaceSizeClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15522FBDDAB00C77897 /* UIUserInterfaceSizeClassExtensions.swift */; };
+		0453F19F22FBDDAB00C77897 /* UIDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15622FBDDAB00C77897 /* UIDeviceExtensions.swift */; };
+		0453F1A022FBDDAB00C77897 /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15722FBDDAB00C77897 /* NSAttributedStringExtensions.swift */; };
+		0453F1A122FBDDAB00C77897 /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15822FBDDAB00C77897 /* UIAlertControllerExtensions.swift */; };
+		0453F1A222FBDDAB00C77897 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15922FBDDAB00C77897 /* UIColorExtensions.swift */; };
+		0453F1A322FBDDAB00C77897 /* String+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15A22FBDDAB00C77897 /* String+Emoji.swift */; };
+		0453F1A422FBDDAB00C77897 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15B22FBDDAB00C77897 /* UIEdgeInsets.swift */; };
+		0453F1A522FBDDAB00C77897 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15D22FBDDAB00C77897 /* LoginVC.swift */; };
+		0453F1A622FBDDAB00C77897 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F15E22FBDDAB00C77897 /* SignupVC.swift */; };
+		0453F1A722FBDDAB00C77897 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16022FBDDAB00C77897 /* SearchVC.swift */; };
+		0453F1A822FBDDAB00C77897 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16222FBDDAB00C77897 /* OrdersVC.swift */; };
+		0453F1A922FBDDAB00C77897 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16322FBDDAB00C77897 /* OrderDetailVC.swift */; };
+		0453F1AA22FBDDAB00C77897 /* OrderListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0453F16422FBDDAB00C77897 /* OrderListTVC.xib */; };
+		0453F1AB22FBDDAB00C77897 /* OrderListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16522FBDDAB00C77897 /* OrderListTVC.swift */; };
+		0453F1AC22FBDDAB00C77897 /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16722FBDDAB00C77897 /* AddItemVC.swift */; };
+		0453F1AD22FBDDAB00C77897 /* SendMailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16822FBDDAB00C77897 /* SendMailVC.swift */; };
+		0453F1AE22FBDDAB00C77897 /* ListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0453F16A22FBDDAB00C77897 /* ListTVC.xib */; };
+		0453F1AF22FBDDAB00C77897 /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16B22FBDDAB00C77897 /* ListTVC.swift */; };
+		0453F1B022FBDDAB00C77897 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16C22FBDDAB00C77897 /* ItemDetailVC.swift */; };
+		0453F1B122FBDDAB00C77897 /* ItemBillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16D22FBDDAB00C77897 /* ItemBillVC.swift */; };
+		0453F1B222FBDDAB00C77897 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F16E22FBDDAB00C77897 /* HomeVC.swift */; };
+		0453F1B322FBDDAB00C77897 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F17022FBDDAB00C77897 /* ProfileVC.swift */; };
+		0453F1B722FBE2EC00C77897 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0453F1B622FBE2EC00C77897 /* GoogleService-Info.plist */; };
+		148DA89C1DAB354E280C0220 /* Pods_Cake_Shop_ManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7671EE2393C327C2230DFA7E /* Pods_Cake_Shop_ManagerTests.framework */; };
+		810CB506AF4AFA121F8172F4 /* Pods_Cake_Shop_ManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A7596533C60CDE94FD056 /* Pods_Cake_Shop_ManagerUITests.framework */; };
+		DC79A6D4A0370FC168415CCB /* Pods_Cake_Shop_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A4E2E1B050600E7D571943 /* Pods_Cake_Shop_Manager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +106,6 @@
 /* Begin PBXFileReference section */
 		0453F0F622FBDC7100C77897 /* Cake Shop Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cake Shop Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0453F0F922FBDC7100C77897 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0453F0FB22FBDC7100C77897 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0453F0FE22FBDC7100C77897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0453F10022FBDC7500C77897 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0453F10322FBDC7500C77897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +116,83 @@
 		0453F11522FBDC7500C77897 /* Cake Shop ManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cake Shop ManagerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0453F11922FBDC7500C77897 /* Cake_Shop_ManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cake_Shop_ManagerUITests.swift; sourceTree = "<group>"; };
 		0453F11B22FBDC7500C77897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0453F12722FBDDAB00C77897 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		0453F12922FBDDAB00C77897 /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
+		0453F12A22FBDDAB00C77897 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
+		0453F12B22FBDDAB00C77897 /* BlockPan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockPan.swift; sourceTree = "<group>"; };
+		0453F12C22FBDDAB00C77897 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0453F12D22FBDDAB00C77897 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		0453F12E22FBDDAB00C77897 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		0453F12F22FBDDAB00C77897 /* CGPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
+		0453F13022FBDDAB00C77897 /* TimerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerExtensions.swift; sourceTree = "<group>"; };
+		0453F13122FBDDAB00C77897 /* BlockSwipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockSwipe.swift; sourceTree = "<group>"; };
+		0453F13222FBDDAB00C77897 /* UITextViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
+		0453F13322FBDDAB00C77897 /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
+		0453F13422FBDDAB00C77897 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		0453F13522FBDDAB00C77897 /* BlockPinch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockPinch.swift; sourceTree = "<group>"; };
+		0453F13622FBDDAB00C77897 /* UIBarButtonItemExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensions.swift; sourceTree = "<group>"; };
+		0453F13722FBDDAB00C77897 /* ErrorTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTypeExtensions.swift; sourceTree = "<group>"; };
+		0453F13822FBDDAB00C77897 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		0453F13922FBDDAB00C77897 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
+		0453F13A22FBDDAB00C77897 /* BlockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockButton.swift; sourceTree = "<group>"; };
+		0453F13B22FBDDAB00C77897 /* UIColoredView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColoredView.swift; sourceTree = "<group>"; };
+		0453F13C22FBDDAB00C77897 /* BoolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
+		0453F13D22FBDDAB00C77897 /* EZSwiftFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZSwiftFunctions.swift; sourceTree = "<group>"; };
+		0453F13E22FBDDAB00C77897 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		0453F13F22FBDDAB00C77897 /* UISliderExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderExtensions.swift; sourceTree = "<group>"; };
+		0453F14022FBDDAB00C77897 /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		0453F14122FBDDAB00C77897 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
+		0453F14222FBDDAB00C77897 /* Custom Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Custom Extension.swift"; sourceTree = "<group>"; };
+		0453F14322FBDDAB00C77897 /* CollectionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsExtension.swift; sourceTree = "<group>"; };
+		0453F14422FBDDAB00C77897 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		0453F14522FBDDAB00C77897 /* BundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
+		0453F14622FBDDAB00C77897 /* CharacterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterExtensions.swift; sourceTree = "<group>"; };
+		0453F14722FBDDAB00C77897 /* BlockTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockTap.swift; sourceTree = "<group>"; };
+		0453F14822FBDDAB00C77897 /* FloatingPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointExtensions.swift; sourceTree = "<group>"; };
+		0453F14922FBDDAB00C77897 /* NSDictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtensions.swift; sourceTree = "<group>"; };
+		0453F14A22FBDDAB00C77897 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		0453F14B22FBDDAB00C77897 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
+		0453F14C22FBDDAB00C77897 /* BlockLongPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockLongPress.swift; sourceTree = "<group>"; };
+		0453F14D22FBDDAB00C77897 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		0453F14E22FBDDAB00C77897 /* UISwitchExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchExtensions.swift; sourceTree = "<group>"; };
+		0453F14F22FBDDAB00C77897 /* Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		0453F15022FBDDAB00C77897 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		0453F15122FBDDAB00C77897 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		0453F15222FBDDAB00C77897 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		0453F15322FBDDAB00C77897 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		0453F15422FBDDAB00C77897 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		0453F15522FBDDAB00C77897 /* UIUserInterfaceSizeClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUserInterfaceSizeClassExtensions.swift; sourceTree = "<group>"; };
+		0453F15622FBDDAB00C77897 /* UIDeviceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtensions.swift; sourceTree = "<group>"; };
+		0453F15722FBDDAB00C77897 /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		0453F15822FBDDAB00C77897 /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
+		0453F15922FBDDAB00C77897 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		0453F15A22FBDDAB00C77897 /* String+Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Emoji.swift"; sourceTree = "<group>"; };
+		0453F15B22FBDDAB00C77897 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		0453F15D22FBDDAB00C77897 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0453F15E22FBDDAB00C77897 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		0453F16022FBDDAB00C77897 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		0453F16222FBDDAB00C77897 /* OrdersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		0453F16322FBDDAB00C77897 /* OrderDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		0453F16422FBDDAB00C77897 /* OrderListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTVC.xib; sourceTree = "<group>"; };
+		0453F16522FBDDAB00C77897 /* OrderListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTVC.swift; sourceTree = "<group>"; };
+		0453F16722FBDDAB00C77897 /* AddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
+		0453F16822FBDDAB00C77897 /* SendMailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailVC.swift; sourceTree = "<group>"; };
+		0453F16A22FBDDAB00C77897 /* ListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTVC.xib; sourceTree = "<group>"; };
+		0453F16B22FBDDAB00C77897 /* ListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
+		0453F16C22FBDDAB00C77897 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
+		0453F16D22FBDDAB00C77897 /* ItemBillVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBillVC.swift; sourceTree = "<group>"; };
+		0453F16E22FBDDAB00C77897 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0453F17022FBDDAB00C77897 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0453F1B622FBE2EC00C77897 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06EF7FB13485BBC9DA50D537 /* Pods-Cake Shop ManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cake Shop ManagerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Cake Shop ManagerUITests/Pods-Cake Shop ManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		17B90405905E5747510D800C /* Pods-Cake Shop Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cake Shop Manager.release.xcconfig"; path = "Target Support Files/Pods-Cake Shop Manager/Pods-Cake Shop Manager.release.xcconfig"; sourceTree = "<group>"; };
+		567C2C4E842856823E6ED4B7 /* Pods-Cake Shop ManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cake Shop ManagerTests.release.xcconfig"; path = "Target Support Files/Pods-Cake Shop ManagerTests/Pods-Cake Shop ManagerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7671EE2393C327C2230DFA7E /* Pods_Cake_Shop_ManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cake_Shop_ManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84A7596533C60CDE94FD056 /* Pods_Cake_Shop_ManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cake_Shop_ManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A4E2E1B050600E7D571943 /* Pods_Cake_Shop_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cake_Shop_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20749C85263DAC23B3F5052 /* Pods-Cake Shop ManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cake Shop ManagerUITests.release.xcconfig"; path = "Target Support Files/Pods-Cake Shop ManagerUITests/Pods-Cake Shop ManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F1D84539822AE556ACC31AED /* Pods-Cake Shop ManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cake Shop ManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-Cake Shop ManagerTests/Pods-Cake Shop ManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F33507C90481EAA3EE7CDF00 /* Pods-Cake Shop Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cake Shop Manager.debug.xcconfig"; path = "Target Support Files/Pods-Cake Shop Manager/Pods-Cake Shop Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC79A6D4A0370FC168415CCB /* Pods_Cake_Shop_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148DA89C1DAB354E280C0220 /* Pods_Cake_Shop_ManagerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810CB506AF4AFA121F8172F4 /* Pods_Cake_Shop_ManagerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +230,8 @@
 				0453F10D22FBDC7500C77897 /* Cake Shop ManagerTests */,
 				0453F11822FBDC7500C77897 /* Cake Shop ManagerUITests */,
 				0453F0F722FBDC7100C77897 /* Products */,
+				F15428431910754415EFCCBC /* Pods */,
+				68597C9BEA2F4EB621C5C8E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,10 +248,17 @@
 		0453F0F822FBDC7100C77897 /* Cake Shop Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0453F15C22FBDDAB00C77897 /* Auth */,
+				0453F12822FBDDAB00C77897 /* EZSwiftExtensions */,
+				0453F16622FBDDAB00C77897 /* Home */,
+				0453F16122FBDDAB00C77897 /* Orders */,
+				0453F16F22FBDDAB00C77897 /* Profile */,
+				0453F15F22FBDDAB00C77897 /* Search */,
+				0453F12722FBDDAB00C77897 /* Helper.swift */,
 				0453F0F922FBDC7100C77897 /* AppDelegate.swift */,
-				0453F0FB22FBDC7100C77897 /* ViewController.swift */,
 				0453F0FD22FBDC7100C77897 /* Main.storyboard */,
 				0453F10022FBDC7500C77897 /* Assets.xcassets */,
+				0453F1B622FBE2EC00C77897 /* GoogleService-Info.plist */,
 				0453F10222FBDC7500C77897 /* LaunchScreen.storyboard */,
 				0453F10522FBDC7500C77897 /* Info.plist */,
 			);
@@ -125,6 +283,145 @@
 			path = "Cake Shop ManagerUITests";
 			sourceTree = "<group>";
 		};
+		0453F12822FBDDAB00C77897 /* EZSwiftExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				0453F12922FBDDAB00C77897 /* CGRectExtensions.swift */,
+				0453F12A22FBDDAB00C77897 /* CGFloatExtensions.swift */,
+				0453F12B22FBDDAB00C77897 /* BlockPan.swift */,
+				0453F12C22FBDDAB00C77897 /* UIViewController+Extensions.swift */,
+				0453F12D22FBDDAB00C77897 /* ArrayExtensions.swift */,
+				0453F12E22FBDDAB00C77897 /* UIView+Extensions.swift */,
+				0453F12F22FBDDAB00C77897 /* CGPointExtensions.swift */,
+				0453F13022FBDDAB00C77897 /* TimerExtensions.swift */,
+				0453F13122FBDDAB00C77897 /* BlockSwipe.swift */,
+				0453F13222FBDDAB00C77897 /* UITextViewExtensions.swift */,
+				0453F13322FBDDAB00C77897 /* UISearchBar+Extensions.swift */,
+				0453F13422FBDDAB00C77897 /* DictionaryExtensions.swift */,
+				0453F13522FBDDAB00C77897 /* BlockPinch.swift */,
+				0453F13622FBDDAB00C77897 /* UIBarButtonItemExtensions.swift */,
+				0453F13722FBDDAB00C77897 /* ErrorTypeExtensions.swift */,
+				0453F13822FBDDAB00C77897 /* StringExtensions.swift */,
+				0453F13922FBDDAB00C77897 /* UIStoryboardExtensions.swift */,
+				0453F13A22FBDDAB00C77897 /* BlockButton.swift */,
+				0453F13B22FBDDAB00C77897 /* UIColoredView.swift */,
+				0453F13C22FBDDAB00C77897 /* BoolExtensions.swift */,
+				0453F13D22FBDDAB00C77897 /* EZSwiftFunctions.swift */,
+				0453F13E22FBDDAB00C77897 /* DoubleExtensions.swift */,
+				0453F13F22FBDDAB00C77897 /* UISliderExtensions.swift */,
+				0453F14022FBDDAB00C77897 /* URLExtensions.swift */,
+				0453F14122FBDDAB00C77897 /* FileManagerExtension.swift */,
+				0453F14222FBDDAB00C77897 /* Custom Extension.swift */,
+				0453F14322FBDDAB00C77897 /* CollectionsExtension.swift */,
+				0453F14422FBDDAB00C77897 /* UIImageExtensions.swift */,
+				0453F14522FBDDAB00C77897 /* BundleExtensions.swift */,
+				0453F14622FBDDAB00C77897 /* CharacterExtensions.swift */,
+				0453F14722FBDDAB00C77897 /* BlockTap.swift */,
+				0453F14822FBDDAB00C77897 /* FloatingPointExtensions.swift */,
+				0453F14922FBDDAB00C77897 /* NSDictionaryExtensions.swift */,
+				0453F14A22FBDDAB00C77897 /* IntExtensions.swift */,
+				0453F14B22FBDDAB00C77897 /* UIWindowExtensions.swift */,
+				0453F14C22FBDDAB00C77897 /* BlockLongPress.swift */,
+				0453F14D22FBDDAB00C77897 /* DateExtensions.swift */,
+				0453F14E22FBDDAB00C77897 /* UISwitchExtensions.swift */,
+				0453F14F22FBDDAB00C77897 /* Emoji.swift */,
+				0453F15022FBDDAB00C77897 /* UIButtonExtensions.swift */,
+				0453F15122FBDDAB00C77897 /* NSObjectExtensions.swift */,
+				0453F15222FBDDAB00C77897 /* UserDefaultsExtension.swift */,
+				0453F15322FBDDAB00C77897 /* UIApplicationExtensions.swift */,
+				0453F15422FBDDAB00C77897 /* UIImageViewExtensions.swift */,
+				0453F15522FBDDAB00C77897 /* UIUserInterfaceSizeClassExtensions.swift */,
+				0453F15622FBDDAB00C77897 /* UIDeviceExtensions.swift */,
+				0453F15722FBDDAB00C77897 /* NSAttributedStringExtensions.swift */,
+				0453F15822FBDDAB00C77897 /* UIAlertControllerExtensions.swift */,
+				0453F15922FBDDAB00C77897 /* UIColorExtensions.swift */,
+				0453F15A22FBDDAB00C77897 /* String+Emoji.swift */,
+				0453F15B22FBDDAB00C77897 /* UIEdgeInsets.swift */,
+			);
+			path = EZSwiftExtensions;
+			sourceTree = "<group>";
+		};
+		0453F15C22FBDDAB00C77897 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0453F15D22FBDDAB00C77897 /* LoginVC.swift */,
+				0453F15E22FBDDAB00C77897 /* SignupVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0453F15F22FBDDAB00C77897 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0453F16022FBDDAB00C77897 /* SearchVC.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0453F16122FBDDAB00C77897 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				0453F16222FBDDAB00C77897 /* OrdersVC.swift */,
+				0453F16322FBDDAB00C77897 /* OrderDetailVC.swift */,
+				0453F16422FBDDAB00C77897 /* OrderListTVC.xib */,
+				0453F16522FBDDAB00C77897 /* OrderListTVC.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		0453F16622FBDDAB00C77897 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0453F16722FBDDAB00C77897 /* AddItemVC.swift */,
+				0453F16822FBDDAB00C77897 /* SendMailVC.swift */,
+				0453F16922FBDDAB00C77897 /* Cell */,
+				0453F16C22FBDDAB00C77897 /* ItemDetailVC.swift */,
+				0453F16D22FBDDAB00C77897 /* ItemBillVC.swift */,
+				0453F16E22FBDDAB00C77897 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0453F16922FBDDAB00C77897 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0453F16A22FBDDAB00C77897 /* ListTVC.xib */,
+				0453F16B22FBDDAB00C77897 /* ListTVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0453F16F22FBDDAB00C77897 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0453F17022FBDDAB00C77897 /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		68597C9BEA2F4EB621C5C8E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1A4E2E1B050600E7D571943 /* Pods_Cake_Shop_Manager.framework */,
+				7671EE2393C327C2230DFA7E /* Pods_Cake_Shop_ManagerTests.framework */,
+				C84A7596533C60CDE94FD056 /* Pods_Cake_Shop_ManagerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F15428431910754415EFCCBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F33507C90481EAA3EE7CDF00 /* Pods-Cake Shop Manager.debug.xcconfig */,
+				17B90405905E5747510D800C /* Pods-Cake Shop Manager.release.xcconfig */,
+				F1D84539822AE556ACC31AED /* Pods-Cake Shop ManagerTests.debug.xcconfig */,
+				567C2C4E842856823E6ED4B7 /* Pods-Cake Shop ManagerTests.release.xcconfig */,
+				06EF7FB13485BBC9DA50D537 /* Pods-Cake Shop ManagerUITests.debug.xcconfig */,
+				D20749C85263DAC23B3F5052 /* Pods-Cake Shop ManagerUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +429,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0453F11E22FBDC7500C77897 /* Build configuration list for PBXNativeTarget "Cake Shop Manager" */;
 			buildPhases = (
+				189BB976B10237582EA0E10C /* [CP] Check Pods Manifest.lock */,
 				0453F0F222FBDC7100C77897 /* Sources */,
 				0453F0F322FBDC7100C77897 /* Frameworks */,
 				0453F0F422FBDC7100C77897 /* Resources */,
+				FC88B59E05C5CB37B791101D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +448,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0453F12122FBDC7500C77897 /* Build configuration list for PBXNativeTarget "Cake Shop ManagerTests" */;
 			buildPhases = (
+				B86772C81681C8E5050A7C67 /* [CP] Check Pods Manifest.lock */,
 				0453F10622FBDC7500C77897 /* Sources */,
 				0453F10722FBDC7500C77897 /* Frameworks */,
 				0453F10822FBDC7500C77897 /* Resources */,
@@ -167,6 +467,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0453F12422FBDC7500C77897 /* Build configuration list for PBXNativeTarget "Cake Shop ManagerUITests" */;
 			buildPhases = (
+				36EBF90E81AB0F16DC2009B8 /* [CP] Check Pods Manifest.lock */,
 				0453F11122FBDC7500C77897 /* Sources */,
 				0453F11222FBDC7500C77897 /* Frameworks */,
 				0453F11322FBDC7500C77897 /* Resources */,
@@ -229,9 +530,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0453F1AE22FBDDAB00C77897 /* ListTVC.xib in Resources */,
 				0453F10422FBDC7500C77897 /* LaunchScreen.storyboard in Resources */,
 				0453F10122FBDC7500C77897 /* Assets.xcassets in Resources */,
+				0453F1AA22FBDDAB00C77897 /* OrderListTVC.xib in Resources */,
 				0453F0FF22FBDC7100C77897 /* Main.storyboard in Resources */,
+				0453F1B722FBE2EC00C77897 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +555,180 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		189BB976B10237582EA0E10C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cake Shop Manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36EBF90E81AB0F16DC2009B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cake Shop ManagerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B86772C81681C8E5050A7C67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cake Shop ManagerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC88B59E05C5CB37B791101D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cake Shop Manager/Pods-Cake Shop Manager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cake Shop Manager/Pods-Cake Shop Manager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0453F0F222FBDC7100C77897 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0453F0FC22FBDC7100C77897 /* ViewController.swift in Sources */,
+				0453F19322FBDDAB00C77897 /* IntExtensions.swift in Sources */,
+				0453F1AB22FBDDAB00C77897 /* OrderListTVC.swift in Sources */,
+				0453F18422FBDDAB00C77897 /* UIColoredView.swift in Sources */,
+				0453F19D22FBDDAB00C77897 /* UIImageViewExtensions.swift in Sources */,
+				0453F18F22FBDDAB00C77897 /* CharacterExtensions.swift in Sources */,
+				0453F17422FBDDAB00C77897 /* BlockPan.swift in Sources */,
+				0453F17A22FBDDAB00C77897 /* BlockSwipe.swift in Sources */,
+				0453F1A822FBDDAB00C77897 /* OrdersVC.swift in Sources */,
+				0453F1B222FBDDAB00C77897 /* HomeVC.swift in Sources */,
+				0453F1AF22FBDDAB00C77897 /* ListTVC.swift in Sources */,
+				0453F1A922FBDDAB00C77897 /* OrderDetailVC.swift in Sources */,
+				0453F18922FBDDAB00C77897 /* URLExtensions.swift in Sources */,
+				0453F1A622FBDDAB00C77897 /* SignupVC.swift in Sources */,
+				0453F1A722FBDDAB00C77897 /* SearchVC.swift in Sources */,
+				0453F1A422FBDDAB00C77897 /* UIEdgeInsets.swift in Sources */,
+				0453F17C22FBDDAB00C77897 /* UISearchBar+Extensions.swift in Sources */,
+				0453F17F22FBDDAB00C77897 /* UIBarButtonItemExtensions.swift in Sources */,
+				0453F18622FBDDAB00C77897 /* EZSwiftFunctions.swift in Sources */,
+				0453F17822FBDDAB00C77897 /* CGPointExtensions.swift in Sources */,
+				0453F19522FBDDAB00C77897 /* BlockLongPress.swift in Sources */,
+				0453F19C22FBDDAB00C77897 /* UIApplicationExtensions.swift in Sources */,
+				0453F19722FBDDAB00C77897 /* UISwitchExtensions.swift in Sources */,
+				0453F1A222FBDDAB00C77897 /* UIColorExtensions.swift in Sources */,
+				0453F18A22FBDDAB00C77897 /* FileManagerExtension.swift in Sources */,
+				0453F17D22FBDDAB00C77897 /* DictionaryExtensions.swift in Sources */,
+				0453F18522FBDDAB00C77897 /* BoolExtensions.swift in Sources */,
+				0453F18822FBDDAB00C77897 /* UISliderExtensions.swift in Sources */,
+				0453F1B122FBDDAB00C77897 /* ItemBillVC.swift in Sources */,
+				0453F17222FBDDAB00C77897 /* CGRectExtensions.swift in Sources */,
+				0453F19F22FBDDAB00C77897 /* UIDeviceExtensions.swift in Sources */,
+				0453F19822FBDDAB00C77897 /* Emoji.swift in Sources */,
+				0453F1AD22FBDDAB00C77897 /* SendMailVC.swift in Sources */,
+				0453F1A122FBDDAB00C77897 /* UIAlertControllerExtensions.swift in Sources */,
+				0453F1AC22FBDDAB00C77897 /* AddItemVC.swift in Sources */,
+				0453F17722FBDDAB00C77897 /* UIView+Extensions.swift in Sources */,
+				0453F19422FBDDAB00C77897 /* UIWindowExtensions.swift in Sources */,
+				0453F19122FBDDAB00C77897 /* FloatingPointExtensions.swift in Sources */,
+				0453F18722FBDDAB00C77897 /* DoubleExtensions.swift in Sources */,
+				0453F19622FBDDAB00C77897 /* DateExtensions.swift in Sources */,
+				0453F17E22FBDDAB00C77897 /* BlockPinch.swift in Sources */,
+				0453F19B22FBDDAB00C77897 /* UserDefaultsExtension.swift in Sources */,
+				0453F1B022FBDDAB00C77897 /* ItemDetailVC.swift in Sources */,
+				0453F17522FBDDAB00C77897 /* UIViewController+Extensions.swift in Sources */,
+				0453F17B22FBDDAB00C77897 /* UITextViewExtensions.swift in Sources */,
+				0453F18C22FBDDAB00C77897 /* CollectionsExtension.swift in Sources */,
 				0453F0FA22FBDC7100C77897 /* AppDelegate.swift in Sources */,
+				0453F17122FBDDAB00C77897 /* Helper.swift in Sources */,
+				0453F19922FBDDAB00C77897 /* UIButtonExtensions.swift in Sources */,
+				0453F1B322FBDDAB00C77897 /* ProfileVC.swift in Sources */,
+				0453F19E22FBDDAB00C77897 /* UIUserInterfaceSizeClassExtensions.swift in Sources */,
+				0453F19022FBDDAB00C77897 /* BlockTap.swift in Sources */,
+				0453F1A022FBDDAB00C77897 /* NSAttributedStringExtensions.swift in Sources */,
+				0453F18022FBDDAB00C77897 /* ErrorTypeExtensions.swift in Sources */,
+				0453F17322FBDDAB00C77897 /* CGFloatExtensions.swift in Sources */,
+				0453F17922FBDDAB00C77897 /* TimerExtensions.swift in Sources */,
+				0453F1A522FBDDAB00C77897 /* LoginVC.swift in Sources */,
+				0453F19A22FBDDAB00C77897 /* NSObjectExtensions.swift in Sources */,
+				0453F1A322FBDDAB00C77897 /* String+Emoji.swift in Sources */,
+				0453F17622FBDDAB00C77897 /* ArrayExtensions.swift in Sources */,
+				0453F18B22FBDDAB00C77897 /* Custom Extension.swift in Sources */,
+				0453F19222FBDDAB00C77897 /* NSDictionaryExtensions.swift in Sources */,
+				0453F18E22FBDDAB00C77897 /* BundleExtensions.swift in Sources */,
+				0453F18222FBDDAB00C77897 /* UIStoryboardExtensions.swift in Sources */,
+				0453F18122FBDDAB00C77897 /* StringExtensions.swift in Sources */,
+				0453F18322FBDDAB00C77897 /* BlockButton.swift in Sources */,
+				0453F18D22FBDDAB00C77897 /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,40 +901,51 @@
 		};
 		0453F11F22FBDC7500C77897 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F33507C90481EAA3EE7CDF00 /* Pods-Cake Shop Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5Q36P92PH;
 				INFOPLIST_FILE = "Cake Shop Manager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xc.csm.Cake-Shop-Manager";
+				PRODUCT_BUNDLE_IDENTIFIER = com.backerboymanager.niraj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0453F12022FBDC7500C77897 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17B90405905E5747510D800C /* Pods-Cake Shop Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5Q36P92PH;
 				INFOPLIST_FILE = "Cake Shop Manager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xc.csm.Cake-Shop-Manager";
+				PRODUCT_BUNDLE_IDENTIFIER = com.backerboymanager.niraj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		0453F12222FBDC7500C77897 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1D84539822AE556ACC31AED /* Pods-Cake Shop ManagerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -476,7 +958,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xc.csm.Cake-Shop-ManagerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cake Shop Manager.app/Cake Shop Manager";
 			};
@@ -484,6 +966,7 @@
 		};
 		0453F12322FBDC7500C77897 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 567C2C4E842856823E6ED4B7 /* Pods-Cake Shop ManagerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,7 +979,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xc.csm.Cake-Shop-ManagerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cake Shop Manager.app/Cake Shop Manager";
 			};
@@ -504,6 +987,7 @@
 		};
 		0453F12522FBDC7500C77897 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06EF7FB13485BBC9DA50D537 /* Pods-Cake Shop ManagerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -515,7 +999,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xc.csm.Cake-Shop-ManagerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Cake Shop Manager";
 			};
@@ -523,6 +1007,7 @@
 		};
 		0453F12622FBDC7500C77897 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D20749C85263DAC23B3F5052 /* Pods-Cake Shop ManagerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,7 +1019,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xc.csm.Cake-Shop-ManagerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Cake Shop Manager";
 			};
