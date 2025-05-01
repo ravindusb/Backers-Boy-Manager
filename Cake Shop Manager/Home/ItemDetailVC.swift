@@ -265,6 +265,11 @@ extension ItemDetailVC : UIImagePickerControllerDelegate,UINavigationControllerD
         }
         picker.dismiss(animated: true, completion: nil)
     }
+
+    func endEditing( _ searchBar: UISearchBar)
+    {
+        self.view.endEditing(true)
+    }
     
     
 }
