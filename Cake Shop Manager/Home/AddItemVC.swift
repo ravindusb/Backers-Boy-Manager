@@ -12,221 +12,407 @@ import FirebaseDatabase
 import SVProgressHUD
 import FirebaseStorage
 
-class AddItemVC: UIViewController {
-
-   
-    @IBOutlet weak var txtItemName :UITextField!
-    @IBOutlet weak var txtPrice :UITextField!
-    @IBOutlet weak var txtviewDesc :UITextView!
-    @IBOutlet weak var txtStock  :UITextField!
-    @IBOutlet weak var imgItemPic :UIImageView!
+/// ViewController responsible for adding new items to the shop
+final class AddItemVC: UIViewController {
     
-    var ref : DatabaseReference!
-    var imagePicker = UIImagePickerController()
-    var strImageUrl = ""
-    var isImageSelected = false
-    var dictData = NSDictionary()
+    // MARK: - Constants
+    private enum Constants {
+        static let imageCompressionQuality: CGFloat = 0.3
+        static let defaultImageName = "ic_price"
+        static let addImageName = "ic_addImage"
+        static let imageFileExtension = "jpg"
+        static let maxImageSize: CGFloat = 1024
+        static let cornerRadius: CGFloat = 5
+        static let borderWidth: CGFloat = 1
+    }
     
+    // MARK: - IBOutlets
+    @IBOutlet private weak var txtItemName: UITextField!
+    @IBOutlet private weak var txtPrice: UITextField!
+    @IBOutlet private weak var txtviewDesc: UITextView!
+    @IBOutlet private weak var txtStock: UITextField!
+    @IBOutlet private weak var imgItemPic: UIImageView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - Properties
+    private let ref = Database.database().reference()
+    private let imagePicker = UIImagePickerController()
+    private let storage = Storage.storage()
+    private var isImageSelected = false
+    private var isUploading = false
+    private var keyboardHeight: CGFloat = 0
+    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = Database.database().reference()
-        self.imagePicker.delegate = self
-        // Do any additional setup after loading the view.
+        setupUI()
+        setupDelegates()
+        setupKeyboardObservers()
     }
     
-    @IBAction func btnActionAddProfile(_ sender :UIButton){
-        self.view.endEditing(true)
-        self.pickerOpen(sender: sender)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardObservers()
+        SVProgressHUD.dismiss()
     }
     
+    deinit {
+        removeKeyboardObservers()
+    }
     
-    @IBAction func btnActionBack(_ sender: UIButton) {
+    // MARK: - Private Methods
+    private func setupUI() {
+        imagePicker.allowsEditing = true
+        setupTextFields()
+        setupImageView()
+        setupActivityIndicator()
+    }
+    
+    private func setupDelegates() {
+        imagePicker.delegate = self
+        txtItemName.delegate = self
+        txtPrice.delegate = self
+        txtStock.delegate = self
+        txtviewDesc.delegate = self
+    }
+    
+    private func setupKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func removeKeyboardObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func setupTextFields() {
+        txtPrice.keyboardType = .decimalPad
+        txtStock.keyboardType = .numberPad
         
-            self.dismiss(animated: true, completion: nil)
+        [txtItemName, txtPrice, txtStock].forEach { textField in
+            textField?.layer.cornerRadius = Constants.cornerRadius
+            textField?.layer.borderWidth = Constants.borderWidth
+            textField?.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
+        txtviewDesc.layer.cornerRadius = Constants.cornerRadius
+        txtviewDesc.layer.borderWidth = Constants.borderWidth
+        txtviewDesc.layer.borderColor = UIColor.lightGray.cgColor
     }
-    @IBAction func btnActionAddCustomer(_ sender :UIButton){
-        if  isValidInput(){
-            if isGuest{
-                let alert = UIAlertController(title: AppName, message: "Please Login To Add Your Item", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { _ in
-                    AppDelegate.shared.navToLogin()
-                }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }else{
-                addCustomer()
+    
+    private func setupImageView() {
+        imgItemPic.image = UIImage(named: Constants.defaultImageName)
+        imgItemPic.contentMode = .scaleAspectFit
+        imgItemPic.clipsToBounds = true
+        imgItemPic.layer.cornerRadius = Constants.cornerRadius
+        imgItemPic.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imgItemPic.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setupActivityIndicator() {
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+    }
+    
+    @objc private func imageTapped() {
+        view.endEditing(true)
+        showImagePickerOptions(sender: UIButton())
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        keyboardHeight = keyboardFrame.height
+        adjustViewForKeyboard()
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        keyboardHeight = 0
+        adjustViewForKeyboard()
+    }
+    
+    private func adjustViewForKeyboard() {
+        let duration = 0.3
+        UIView.animate(withDuration: duration) {
+            self.view.frame.origin.y = -self.keyboardHeight
+        }
+    }
+    
+    private func isValidInput() -> Bool {
+        guard let itemName = txtItemName.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+              let price = txtPrice.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+              let stock = txtStock.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+            return false
+        }
+        
+        if imgItemPic.image == UIImage(named: Constants.addImageName) {
+            showAlert(message: "Please Select Image")
+            return false
+        }
+        
+        if itemName.isEmpty {
+            showAlert(message: "Please Enter Item Name")
+            return false
+        }
+        
+        if price.isEmpty {
+            showAlert(message: "Please Enter Price Per Pcs.")
+            return false
+        }
+        
+        if stock.isEmpty {
+            showAlert(message: "Please Enter Available Stock")
+            return false
+        }
+        
+        return true
+    }
+    
+    private func addItem() {
+        guard !isUploading else { return }
+        guard isValidInput() else { return }
+        
+        if isGuest {
+            showLoginAlert()
+            return
+        }
+        
+        isUploading = true
+        showLoading()
+        
+        let userData = ref.child("items").childByAutoId()
+        let itemId = userData.key ?? UUID().uuidString
+        
+        let itemData: [String: Any] = [
+            "userId": userID,
+            "itemId": itemId,
+            "image": "",
+            "name": txtItemName.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+            "price": txtPrice.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+            "stock": txtStock.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+            "desc": txtviewDesc.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+            "createdAt": ServerValue.timestamp()
+        ]
+        
+        userData.setValue(itemData) { [weak self] error, _ in
+            guard let self = self else { return }
+            
+            if let error = error {
+                self.handleError(error)
+                return
             }
             
+            if self.isImageSelected {
+                self.storeImage(itemId: itemId)
+            } else {
+                self.handleSuccess()
+            }
         }
-        
     }
     
-    func isValidInput()->Bool{
-        if imgItemPic.image == UIImage(named: "ic_addImage"){
-            self.globalAlert(msg: "Please Select Image")
-            return false
+    private func storeImage(itemId: String) {
+        guard let image = imgItemPic.image else {
+            handleError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No image selected"]))
+            return
         }
-        if txtItemName.text!.isBlank{
-            self.globalAlert(msg: "Please Enter Item Name")
-            return false
+        
+        let resizedImage = image.resized(to: Constants.maxImageSize)
+        guard let imageData = resizedImage.jpegData(compressionQuality: Constants.imageCompressionQuality) else {
+            handleError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to process image"]))
+            return
         }
-        else if txtPrice.text!.isBlank{
-            self.globalAlert(msg: "Please Enter Price Per Pcs.")
-            return false
+        
+        let timestamp = Int64(Date().timeIntervalSince1970 * 1000)
+        let filePath = "\(userID)_\(timestamp).\(Constants.imageFileExtension)"
+        let storageRef = storage.reference().child(filePath)
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        storageRef.putData(imageData, metadata: metadata) { [weak self] metadata, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                self.handleError(error)
+                return
+            }
+            
+            storageRef.downloadURL { [weak self] url, error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    self.handleError(error)
+                    return
+                }
+                
+                guard let imageUrl = url?.absoluteString else {
+                    self.handleError(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to get image URL"]))
+                    return
+                }
+                
+                self.ref.child("items").child(itemId).updateChildValues(["image": imageUrl]) { error, _ in
+                    if let error = error {
+                        self.handleError(error)
+                        return
+                    }
+                    
+                    self.handleSuccess()
+                }
+            }
         }
-        else if txtStock.text!.isBlank{
-            self.globalAlert(msg: "Please Enter Available Stock")
+    }
+    
+    private func showLoading() {
+        SVProgressHUD.show()
+        SVProgressHUD.setDefaultMaskType(.clear)
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideLoading() {
+        SVProgressHUD.dismiss()
+        activityIndicator.stopAnimating()
+    }
+    
+    private func handleSuccess() {
+        isUploading = false
+        hideLoading()
+        showSuccessAlert()
+        isImageSelected = false
+    }
+    
+    private func handleError(_ error: Error) {
+        isUploading = false
+        hideLoading()
+        showAlert(message: error.localizedDescription)
+    }
+    
+    private func showSuccessAlert() {
+        let alert = UIAlertController(title: AppName, message: "Item Added Successfully", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+            self?.resetForm()
+        })
+        present(alert, animated: true)
+    }
+    
+    private func showLoginAlert() {
+        let alert = UIAlertController(title: AppName, message: "Please Login To Add Your Item", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Login", style: .default) { _ in
+            AppDelegate.shared.navToLogin()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    private func resetForm() {
+        view.endEditing(true)
+        txtItemName.text = ""
+        txtviewDesc.text = ""
+        txtPrice.text = ""
+        txtStock.text = ""
+        imgItemPic.image = UIImage(named: Constants.defaultImageName)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: AppName, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    // MARK: - IBActions
+    @IBAction private func btnActionAddProfile(_ sender: UIButton) {
+        view.endEditing(true)
+        showImagePickerOptions(sender: sender)
+    }
+    
+    @IBAction private func btnActionBack(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction private func btnActionAddCustomer(_ sender: UIButton) {
+        addItem()
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension AddItemVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    private func showImagePickerOptions(sender: UIButton) {
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
+            self?.openCamera()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default) { [weak self] _ in
+            self?.openGallery()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alert.popoverPresentationController?.sourceView = sender
+            alert.popoverPresentationController?.sourceRect = sender.bounds
+            alert.popoverPresentationController?.permittedArrowDirections = .up
+        }
+        
+        present(alert, animated: true)
+    }
+    
+    private func openCamera() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            showAlert(message: "Camera is not available")
+            return
+        }
+        
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true)
+    }
+    
+    private func openGallery() {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            imgItemPic.image = image
+            isImageSelected = true
+        }
+        picker.dismiss(animated: true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension AddItemVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+// MARK: - UITextViewDelegate
+extension AddItemVC: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
             return false
         }
         return true
     }
-    
-    func addCustomer(){
-        SVProgressHUD.show()
-        SVProgressHUD.setDefaultMaskType(.clear)
-        let userData = self.ref.child("items").childByAutoId()
-        let url = "\(userData)"
-        let arrPart = url.components(separatedBy: "/")
+}
+
+// MARK: - UIImage Extension
+extension UIImage {
+    func resized(to maxSize: CGFloat) -> UIImage {
+        let scale = min(maxSize / size.width, maxSize / size.height)
+        let newSize = CGSize(width: size.width * scale, height: size.height * scale)
         
-        let arrUserData = [
-            "userId"          : userID,
-            "itemId"          : arrPart[arrPart.count - 1],
-            "image"           : "",
-            "name"            : txtItemName.text!,
-            "price"           : txtPrice.text!,
-            "stock"           : txtStock.text!,
-            "desc"            : txtviewDesc.text!
-            ] as [String : Any]
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        draw(in: CGRect(origin: .zero, size: newSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        //CREATE DIVER NODE
-        // let userData = self.ref.child("birthdays").child(userId)
-        userData.setValue(arrUserData)
-        if self.isImageSelected{
-            SVProgressHUD.dismiss()
-            storeImage(customerId: arrPart[arrPart.count - 1])
-        }else{
-            SVProgressHUD.dismiss()
-            self.alert()
-        }
-    }
-    
-    func alert(){
-        let uiAlert = UIAlertController(title: AppName, message: "Item Added Successfully", preferredStyle: UIAlertController.Style.alert)
-        self.present(uiAlert, animated: true, completion: nil)
-        uiAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            //MARK: SET LOCAL NOTIFICATION
-            self.view.endEditing(true)
-            self.txtItemName.text = ""
-            self.txtviewDesc.text = ""
-            self.txtPrice.text = ""
-            self.txtStock.text = ""
-            self.imgItemPic.image = #imageLiteral(resourceName: "ic_price")
-           // self.dismiss(animated: true, completion: nil)
-            
-        }))
-    
-        // self.present(uiAlert, animated: true, completion: nil)
-    }
-    
-    
-    func storeImage(customerId : String){
-        SVProgressHUD.show()
-        SVProgressHUD.setDefaultMaskType(.clear)
-        let data = self.imgItemPic.image!.jpegData(compressionQuality: 0.3)! as NSData
-        let sec = Int64(Date().timeIntervalSince1970 * 1000)
-        let filePath   = "\(userID)_\(sec).jpg" // path where you wanted to store img in storage
-        let metaData   = StorageMetadata()
-        let storageRef = Storage.storage().reference().child(filePath)
-        storageRef.putData(data as Data, metadata: metaData){(metaDatas,error) in
-            if let error = error {
-                self.globalAlert(msg: error.localizedDescription)
-                SVProgressHUD.dismiss()
-                return
-            }else{
-                storageRef.downloadURL(completion: { (url, error) in
-                    if(error == nil){
-                        self.strImageUrl = url!.absoluteString
-                        //Save New Oreder in Firebase Database
-                        let dictData = [
-                            "image"        : self.strImageUrl
-                            ] as [String : Any]
-                        self.ref.child("items").child(customerId).updateChildValues(dictData)
-                        SVProgressHUD.dismiss()
-                        self.alert()
-                        self.isImageSelected = false
-                    }else {
-                        self.globalAlert(msg: error!.localizedDescription)
-                        SVProgressHUD.dismiss()
-                    }
-                })
-            }
-        }
+        return resizedImage ?? self
     }
 }
-extension AddItemVC : UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    //MARK: Image Picker
-    
-    func pickerOpen(sender : UIButton){
-        
-        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-            self.openCamera()
-        }))
-        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-            self.openGallary()
-        }))
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-        
-        /*If you want work actionsheet on ipad
-         then you have to use popoverPresentationController to present the actionsheet,
-         otherwise app will crash on iPad */
-        switch UIDevice.current.userInterfaceIdiom {
-        case .pad:
-            alert.popoverPresentationController?.sourceView = sender
-            alert.popoverPresentationController?.sourceRect = sender.bounds
-            alert.popoverPresentationController?.permittedArrowDirections = .up
-        default:
-            break
-        }
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func openCamera()
-    {
-        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
-        {
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func openGallary()
-    {
-        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        imagePicker.allowsEditing = true
-        self.present(imagePicker, animated: true, completion: nil)
-    }
-    
-    //MARK:-- ImagePicker delegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.imgItemPic.image = image
-            self.isImageSelected  = true
-            // self.storeImage()
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-   
-    
-}
+
